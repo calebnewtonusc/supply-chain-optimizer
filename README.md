@@ -1,6 +1,6 @@
-# Supply Chain Spend and Supplier Risk Optimizer
+# Supplier Spend & Risk Optimization Dashboard
 
-A procurement analytics tool that ranks a hardware supply base on six dimensions (spend concentration, sole-source exposure, defect rate, lead-time variance, on-time delivery, and late-order risk), segments risk by part family, and models a concrete annual savings opportunity. It surfaces where to negotiate, where to dual-source, and which suppliers to put on a corrective action plan.
+A procurement analytics tool that ranks a hardware supply base on six dimensions (spend concentration, lead-time variance, defect rate, on-time delivery, sole-source exposure, and late-order risk), segments risk by part family, and models a concrete annual savings opportunity. It builds purchasing scorecards that support supplier consolidation, renegotiation, dual-sourcing, and process-improvement decisions across supplier cohorts and part-family risk segments, surfacing where to negotiate, where to dual-source, and which suppliers to put on a corrective action plan.
 
 ## Why this matters
 
