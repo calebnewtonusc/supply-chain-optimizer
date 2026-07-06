@@ -1,0 +1,41 @@
+supplier_id,name,category,region,country,is_dual_sourced,onboarding_date
+SUP-001,Apex Aerospace,Electronics,Europe,France,1,2023-08-11
+SUP-002,Vanguard Precision Works,Avionics,Asia,Japan,1,2025-06-25
+SUP-003,Titan Components,Machined Parts,Asia,Taiwan,0,2022-01-13
+SUP-004,Orbital Technologies,Fasteners,North America,Canada,0,2023-07-07
+SUP-005,Meridian Components,Raw Metals,North America,Canada,1,2021-09-06
+SUP-006,Cascade Fabrication,Raw Metals,Asia,South Korea,1,2023-07-21
+SUP-007,Ironclad Metals,Propulsion Components,North America,Mexico,0,2021-02-03
+SUP-008,Sterling Aerospace,Machined Parts,Asia,Japan,1,2022-07-06
+SUP-009,Precision Industries,Electronics,Asia,South Korea,0,2025-08-17
+SUP-010,Summit Dynamics,Fasteners,Asia,Taiwan,1,2021-09-12
+SUP-011,Keystone Technologies,Propulsion Components,Europe,France,0,2023-04-02
+SUP-012,Halcyon Aerospace,Fasteners,North America,Canada,1,2022-03-24
+SUP-013,Nova Dynamics,Electronics,Europe,Italy,0,2023-09-25
+SUP-014,Redwood Systems,Machined Parts,Europe,Germany,0,2023-05-29
+SUP-015,Anvil Technologies,Propulsion Components,Europe,Germany,0,2022-03-17
+SUP-016,Beacon Metals,Raw Metals,North America,Mexico,1,2022-04-19
+SUP-017,Cobalt Dynamics,Fasteners,North America,Canada,0,2022-07-09
+SUP-018,Delta Technologies,Avionics,North America,Canada,1,2021-05-26
+SUP-019,Everest Metals,Electronics,Asia,South Korea,1,2021-01-13
+SUP-020,Forge Manufacturing,Propulsion Components,Asia,South Korea,0,2025-03-25
+SUP-021,Granite Precision Works,Propulsion Components,Asia,Japan,1,2021-08-06
+SUP-022,Helios Technologies,Electronics,Europe,France,0,2022-02-07
+SUP-023,Ionic Manufacturing,Electronics,Europe,France,0,2023-03-17
+SUP-024,Juniper Components,Avionics,North America,United States,1,2025-05-15
+SUP-025,Kestrel Metals,Composites,Europe,France,0,2021-04-10
+SUP-026,Lumen Components,Avionics,Asia,South Korea,1,2022-06-29
+SUP-027,Magnus Components,Fasteners,North America,Mexico,1,2021-08-10
+SUP-028,Northwind Systems,Composites,North America,Mexico,1,2023-08-03
+SUP-029,Onyx Dynamics,Propulsion Components,North America,Mexico,1,2020-07-06
+SUP-030,Pinnacle Precision Works,Avionics,North America,Canada,1,2025-09-06
+SUP-031,Quantum Precision Works,Propulsion Components,Asia,Japan,1,2023-08-08
+SUP-032,Ridgeline Fabrication,Avionics,Europe,United Kingdom,1,2021-09-01
+SUP-033,Sable Dynamics,Composites,Europe,France,1,2023-09-10
+SUP-034,Trident Precision Works,Raw Metals,North America,Mexico,1,2025-11-17
+SUP-035,Umbra Industries,Avionics,Asia,Taiwan,1,2022-02-24
+SUP-036,Vertex Metals,Electronics,North America,Canada,0,2023-03-26
+SUP-037,Westgate Dynamics,Propulsion Components,Europe,United Kingdom,1,2023-04-06
+SUP-038,Yardley Metals,Propulsion Components,Europe,Germany,1,2024-05-02
+SUP-039,Zenith Fabrication,Composites,Europe,France,0,2020-09-11
+SUP-040,Ascend Aerospace,Raw Metals,North America,Mexico,0,2020-09-06
