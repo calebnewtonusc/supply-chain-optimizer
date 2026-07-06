@@ -214,7 +214,7 @@ def build_html(scored, buckets, total_savings, total_spend, seg):
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Purchasing Risk Dashboard</title>
+<title>Supplier Spend & Risk Optimization Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -233,7 +233,7 @@ def build_html(scored, buckets, total_savings, total_spend, seg):
       Procurement analytics
     </div>
     <h1 style="font-size:34px;font-weight:800;letter-spacing:-0.03em;color:#f7f8fa;margin:14px 0 6px;">
-      Supply Chain Spend and Supplier Risk Dashboard
+      Supplier Spend & Risk Optimization Dashboard
     </h1>
     <p style="font-size:15px;color:#8b93a1;max-width:760px;margin:0;line-height:1.6;">
       Decision surface for consolidation, renegotiation, dual-sourcing, and process-improvement
