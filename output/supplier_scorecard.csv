@@ -1,41 +1,41 @@
-rank,supplier_id,name,category,region,is_dual_sourced,order_count,total_spend,pct_of_total_spend,lead_time_cv,defect_ppm,on_time_pct,late_exposure_usd,risk_score,risk_band
-1,SUP-025,Kestrel Metals,Composites,Europe,0,453,51175820.32,14.607,0.129,797.536,73.731,12998737.23,45.178,Medium
-2,SUP-007,Ironclad Metals,Propulsion Components,North America,0,90,18371257.74,5.244,0.477,958.773,56.667,8422659.79,42.504,Medium
-3,SUP-019,Everest Metals,Electronics,Asia,1,103,10031460.7,2.863,0.557,862.977,53.398,4587476.74,37.874,Medium
-4,SUP-014,Redwood Systems,Machined Parts,Europe,0,113,9375869.91,2.676,0.189,13282.069,69.912,3178725.94,37.323,Medium
-5,SUP-011,Keystone Technologies,Propulsion Components,Europe,0,443,35709437.76,10.192,0.085,1613.482,78.555,7789844.35,29.88,Low
-6,SUP-037,Westgate Dynamics,Propulsion Components,Europe,1,130,15247258.35,4.352,0.194,1847.291,55.385,6429294.49,28.561,Low
-7,SUP-022,Helios Technologies,Electronics,Europe,0,108,4239719.34,1.21,0.092,15015.191,81.481,787421.71,28.141,Low
-8,SUP-003,Titan Components,Machined Parts,Asia,0,431,15901164.59,4.539,0.193,2241.549,68.445,4655199.01,24.391,Low
-9,SUP-031,Quantum Precision Works,Propulsion Components,Asia,1,65,3644474.53,1.04,0.111,0.0,16.923,2981091.31,21.17,Low
-10,SUP-021,Granite Precision Works,Propulsion Components,Asia,1,91,9549486.94,2.726,0.203,2608.696,68.132,3526501.08,21.045,Low
-11,SUP-020,Forge Manufacturing,Propulsion Components,Asia,0,119,19600351.83,5.594,0.099,1447.178,72.269,5232046.54,20.714,Low
-12,SUP-038,Yardley Metals,Propulsion Components,Europe,1,102,11615199.65,3.315,0.177,1502.63,65.686,4305751.59,20.593,Low
-13,SUP-033,Sable Dynamics,Composites,Europe,1,63,7643458.51,2.182,0.194,2018.843,58.73,2988830.86,20.307,Low
-14,SUP-001,Apex Aerospace,Electronics,Europe,1,120,7541192.41,2.152,0.213,2315.836,64.167,2535267.55,19.765,Low
-15,SUP-002,Vanguard Precision Works,Avionics,Asia,1,84,5724373.77,1.634,0.189,2752.294,59.524,2405141.62,19.498,Low
-16,SUP-015,Anvil Technologies,Propulsion Components,Europe,0,115,21057461.03,6.01,0.096,713.776,78.261,4286074.21,17.587,Low
-17,SUP-009,Precision Industries,Electronics,Asia,0,41,1441343.48,0.411,0.16,0.0,31.707,1032223.29,16.446,Low
-18,SUP-035,Umbra Industries,Avionics,Asia,1,105,11063600.64,3.158,0.148,732.601,67.619,3323309.76,16.253,Low
-19,SUP-030,Pinnacle Precision Works,Avionics,North America,1,98,8161559.9,2.329,0.163,3398.471,76.531,1800229.3,16.014,Low
-20,SUP-026,Lumen Components,Avionics,Asia,1,142,11600927.67,3.311,0.114,581.395,71.831,3584263.47,14.131,Low
-21,SUP-023,Ionic Manufacturing,Electronics,Europe,0,110,7345908.74,2.097,0.159,1683.097,72.727,1777094.73,13.454,Low
-22,SUP-039,Zenith Fabrication,Composites,Europe,0,95,8766124.61,2.502,0.117,1723.148,73.684,2462249.53,13.036,Low
-23,SUP-016,Beacon Metals,Raw Metals,North America,1,69,3404488.31,0.972,0.17,477.951,60.87,1529732.14,12.451,Low
-24,SUP-008,Sterling Aerospace,Machined Parts,Asia,1,119,10075742.29,2.876,0.118,337.838,73.109,3032278.68,12.227,Low
-25,SUP-024,Juniper Components,Avionics,North America,1,43,1132873.39,0.323,0.153,2083.333,60.465,430086.08,12.079,Low
-26,SUP-012,Halcyon Aerospace,Fasteners,North America,1,125,2697928.82,0.77,0.195,862.005,68.0,747783.81,11.193,Low
-27,SUP-032,Ridgeline Fabrication,Avionics,Europe,1,121,3919611.06,1.119,0.087,3280.84,71.901,1247467.28,10.989,Low
-28,SUP-040,Ascend Aerospace,Raw Metals,North America,0,118,1645430.07,0.47,0.169,277.944,61.864,648204.73,9.918,Low
-29,SUP-017,Cobalt Dynamics,Fasteners,North America,0,130,2005379.78,0.572,0.123,2030.964,68.462,672972.26,9.611,Low
-30,SUP-034,Trident Precision Works,Raw Metals,North America,1,128,6279069.06,1.792,0.085,1474.219,75.0,1576380.22,8.723,Low
-31,SUP-036,Vertex Metals,Electronics,North America,0,102,3735416.07,1.066,0.126,1347.544,73.529,1067398.42,8.72,Low
-32,SUP-010,Summit Dynamics,Fasteners,Asia,1,110,462135.42,0.132,0.149,1965.99,71.818,131547.61,8.397,Low
-33,SUP-027,Magnus Components,Fasteners,North America,1,59,1168351.5,0.333,0.147,556.986,64.407,394391.55,8.343,Low
-34,SUP-004,Orbital Technologies,Fasteners,North America,0,101,1184953.43,0.338,0.151,385.794,65.347,455309.58,8.096,Low
-35,SUP-006,Cascade Fabrication,Raw Metals,Asia,1,150,2282423.32,0.651,0.118,1598.212,72.0,698599.32,8.024,Low
-36,SUP-028,Northwind Systems,Composites,North America,1,59,3242459.93,0.925,0.109,719.77,67.797,1018454.32,8.002,Low
-37,SUP-029,Onyx Dynamics,Propulsion Components,North America,1,61,4166670.25,1.189,0.095,1369.863,72.131,1058152.4,8.0,Low
-38,SUP-018,Delta Technologies,Avionics,North America,1,65,4612244.79,1.316,0.106,0.0,72.308,1396405.27,6.751,Low
-39,SUP-013,Nova Dynamics,Electronics,Europe,0,128,2682154.08,0.766,0.08,1569.705,72.656,648494.25,6.361,Low
-40,SUP-005,Meridian Components,Raw Metals,North America,1,91,856153.78,0.244,0.098,415.41,75.824,212541.35,3.035,Low
+rank,supplier_id,name,category,region,is_dual_sourced,order_count,total_spend,pct_of_total_spend,sole_source_exposure_usd,lead_time_cv,defect_ppm,on_time_pct,late_exposure_usd,risk_score,risk_band
+1,SUP-025,Kestrel Metals,Composites,Europe,0,111,5348903.94,12.739,5348903.94,0.125,1226.994,66.667,1816995.81,59.005,High
+2,SUP-007,Ironclad Metals,Propulsion Components,North America,0,25,2082200.43,4.959,2082200.43,0.664,0.0,68.0,524336.13,38.75,Medium
+3,SUP-015,Anvil Technologies,Propulsion Components,Europe,0,44,3064262.52,7.298,3064262.52,0.087,2500.0,68.182,774166.25,36.462,Medium
+4,SUP-019,Everest Metals,Electronics,Asia,1,41,2136641.31,5.089,0.0,0.547,502.513,58.537,946478.33,33.269,Low
+5,SUP-013,Nova Dynamics,Electronics,Europe,0,33,3041622.5,7.244,3041622.5,0.111,1171.755,72.727,519489.44,32.747,Low
+6,SUP-011,Keystone Technologies,Propulsion Components,Europe,0,98,3178985.06,7.571,3178985.06,0.085,2350.176,83.673,508391.84,32.312,Low
+7,SUP-020,Forge Manufacturing,Propulsion Components,Asia,0,31,1733124.45,4.128,1733124.45,0.082,4115.226,64.516,669325.97,28.674,Low
+8,SUP-003,Titan Components,Machined Parts,Asia,0,113,1809463.75,4.309,1809463.75,0.168,2618.291,72.566,546055.38,27.013,Low
+9,SUP-022,Helios Technologies,Electronics,Europe,0,18,407929.23,0.972,0.0,0.06,15114.196,77.778,121130.45,25.331,Low
+10,SUP-009,Precision Industries,Electronics,Asia,0,13,179506.42,0.428,0.0,0.261,0.0,23.077,144101.9,21.204,Low
+11,SUP-018,Delta Technologies,Avionics,North America,1,11,420606.96,1.002,0.0,0.104,9803.922,72.727,130134.12,20.569,Low
+12,SUP-033,Sable Dynamics,Composites,Europe,1,18,1041518.53,2.48,0.0,0.193,2554.278,61.111,401815.97,19.51,Low
+13,SUP-023,Ionic Manufacturing,Electronics,Europe,0,32,1049726.56,2.5,1049726.56,0.201,1223.99,71.875,380709.81,19.498,Low
+14,SUP-001,Apex Aerospace,Electronics,Europe,1,29,763396.53,1.818,0.0,0.2,3149.606,62.069,333396.86,18.832,Low
+15,SUP-014,Redwood Systems,Machined Parts,Europe,0,14,581936.43,1.386,0.0,0.207,7947.02,85.714,66892.12,18.167,Low
+16,SUP-024,Juniper Components,Avionics,North America,1,8,706192.01,1.682,0.0,0.228,0.0,50.0,390019.72,18.025,Low
+17,SUP-038,Yardley Metals,Propulsion Components,Europe,1,31,1145673.26,2.729,0.0,0.172,0.0,58.065,555377.36,17.5,Low
+18,SUP-031,Quantum Precision Works,Propulsion Components,Asia,1,10,299253.91,0.713,0.0,0.204,0.0,40.0,191312.48,16.899,Low
+19,SUP-037,Westgate Dynamics,Propulsion Components,Europe,1,33,1493796.88,3.558,0.0,0.218,0.0,78.788,308085.37,14.189,Low
+20,SUP-039,Zenith Fabrication,Composites,Europe,0,18,813347.4,1.937,0.0,0.124,1222.494,66.667,264819.08,13.234,Low
+21,SUP-016,Beacon Metals,Raw Metals,North America,1,23,560226.06,1.334,0.0,0.195,560.643,69.565,157354.05,11.957,Low
+22,SUP-012,Halcyon Aerospace,Fasteners,North America,1,27,222147.38,0.529,0.0,0.201,1040.424,66.667,64965.89,11.571,Low
+23,SUP-036,Vertex Metals,Electronics,North America,0,15,244707.08,0.583,0.0,0.122,0.0,53.333,134348.38,11.514,Low
+24,SUP-021,Granite Precision Works,Propulsion Components,Asia,1,25,1010079.59,2.406,0.0,0.194,0.0,80.0,241465.18,11.143,Low
+25,SUP-008,Sterling Aerospace,Machined Parts,Asia,1,20,851582.6,2.028,0.0,0.129,0.0,70.0,243140.78,11.047,Low
+26,SUP-027,Magnus Components,Fasteners,North America,1,19,135008.73,0.322,0.0,0.123,575.432,57.895,66282.43,10.54,Low
+27,SUP-026,Lumen Components,Avionics,Asia,1,38,1664803.71,3.965,0.0,0.095,0.0,84.211,248344.32,10.294,Low
+28,SUP-006,Cascade Fabrication,Raw Metals,Asia,1,28,201937.18,0.481,0.0,0.129,2170.767,71.429,55627.69,10.136,Low
+29,SUP-017,Cobalt Dynamics,Fasteners,North America,0,32,223150.33,0.531,0.0,0.117,1907.855,71.875,62430.74,9.509,Low
+30,SUP-028,Northwind Systems,Composites,North America,1,16,375504.44,0.894,0.0,0.105,4975.124,93.75,13680.7,8.931,Low
+31,SUP-005,Meridian Components,Raw Metals,North America,1,35,922805.84,2.198,0.0,0.115,441.235,80.0,143279.34,8.875,Low
+32,SUP-034,Trident Precision Works,Raw Metals,North America,1,24,522597.18,1.245,0.0,0.085,1031.814,75.0,135538.3,8.422,Low
+33,SUP-004,Orbital Technologies,Fasteners,North America,0,25,133373.49,0.318,0.0,0.127,508.023,68.0,41596.7,8.284,Low
+34,SUP-035,Umbra Industries,Avionics,Asia,1,28,1327656.44,3.162,0.0,0.118,0.0,89.286,154859.35,8.008,Low
+35,SUP-002,Vanguard Precision Works,Avionics,Asia,1,25,1043484.43,2.485,0.0,0.146,0.0,88.0,145095.1,7.851,Low
+36,SUP-010,Summit Dynamics,Fasteners,Asia,1,30,55815.52,0.133,0.0,0.144,2018.228,80.0,10892.6,7.691,Low
+37,SUP-029,Onyx Dynamics,Propulsion Components,North America,1,6,170958.03,0.407,0.0,0.103,0.0,66.667,60700.51,7.526,Low
+38,SUP-040,Ascend Aerospace,Raw Metals,North America,0,21,118438.21,0.282,0.0,0.141,119.033,71.429,37575.91,7.297,Low
+39,SUP-032,Ridgeline Fabrication,Avionics,Europe,1,22,388696.34,0.926,0.0,0.084,0.0,72.727,150621.18,7.105,Low
+40,SUP-030,Pinnacle Precision Works,Avionics,North America,1,10,517722.86,1.233,0.0,0.121,0.0,90.0,66022.32,4.37,Low

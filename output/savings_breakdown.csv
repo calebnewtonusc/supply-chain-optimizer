@@ -1,0 +1,6 @@
+bucket,base_usd,rate,savings_usd,basis
+Tail-spend consolidation,4094756.11,0.04,163790.24,"16 tail suppliers, 4.0% of tail spend"
+Concentrated-category renegotiation,20258562.65,0.01,121551.38,"7 concentrated suppliers, 0.6% of their spend"
+Sole-source risk reduction,21308289.21,0.0,63924.87,0.3% cost avoidance on material sole-source spend
+Late-order / expedite avoidance,11826855.86,0.0,47307.42,0.4% expedite premium avoided on late PO value
+Defect / quality cost reduction,57430.32,0.25,14357.58,"748 defect units at $76.78 avg unit cost, 25% recovered"

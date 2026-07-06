@@ -3,20 +3,22 @@ Synthetic procurement data generator.
 
 Produces two CSV files used by the rest of the pipeline:
 
-    data/suppliers.csv        ~40 suppliers across hardware categories
-    data/purchase_orders.csv  ~5,000 purchase orders over 24 months
+    data/suppliers.csv        40 suppliers across hardware part families
+    data/purchase_orders.csv  exactly 1,200 purchase orders over 24 months
 
 The data is deliberately seeded with signal, not noise. A handful of
 suppliers are engineered to tell specific business stories that the
 downstream analytics are meant to surface:
 
-    - single-source suppliers carrying a large share of a category's spend
-      (concentration risk that warrants a dual-source)
+    - single-source suppliers carrying a large share of a part family's spend
+      (sole-source exposure that warrants a dual-source)
     - suppliers with high lead-time variance (unpredictable delivery)
     - suppliers with a rising defect rate over time (quality drift)
     - suppliers that are chronically late (schedule risk)
 
-The RNG is seeded so every run reproduces the same dataset.
+Magnitudes are calibrated so total spend lands in the tens of millions,
+which is internally consistent with 1,200 purchase orders. The RNG is
+seeded so every run reproduces the same dataset.
 """
 
 import csv
@@ -30,11 +32,16 @@ rng = np.random.default_rng(SEED)
 
 DATA_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Exact order count is a resume-true claim, so it is a hard target.
+TARGET_ORDERS = 1200
+N_SUPPLIERS = 40
+
 # 24 month window ending at a fixed date for reproducibility.
 WINDOW_END = date(2026, 6, 30)
 WINDOW_START = date(2024, 7, 1)
 WINDOW_DAYS = (WINDOW_END - WINDOW_START).days
 
+# Category is treated as part family throughout the analysis.
 CATEGORIES = [
     "Avionics",
     "Propulsion Components",
@@ -51,15 +58,16 @@ REGIONS = {
     "Asia": ["Japan", "South Korea", "Taiwan"],
 }
 
-# Category level typical unit cost bands (USD) used as a base for pricing.
+# Per part family unit cost bands (USD). Calibrated so that with 1,200 POs
+# total spend lands in the low tens of millions.
 CATEGORY_UNIT_COST = {
-    "Avionics": (2200.0, 9000.0),
-    "Propulsion Components": (4000.0, 18000.0),
-    "Raw Metals": (12.0, 90.0),
-    "Fasteners": (0.4, 6.0),
-    "Composites": (300.0, 1800.0),
-    "Electronics": (40.0, 900.0),
-    "Machined Parts": (60.0, 1200.0),
+    "Avionics": (1800.0, 6500.0),
+    "Propulsion Components": (2500.0, 9000.0),
+    "Raw Metals": (8.0, 55.0),
+    "Fasteners": (0.3, 4.0),
+    "Composites": (250.0, 1400.0),
+    "Electronics": (30.0, 650.0),
+    "Machined Parts": (45.0, 850.0),
 }
 
 SUPPLIER_PREFIXES = [
@@ -77,7 +85,7 @@ SUPPLIER_SUFFIXES = [
 ]
 
 
-def build_suppliers(n_suppliers=40):
+def build_suppliers(n_suppliers=N_SUPPLIERS):
     """Create the supplier master with baked-in risk profiles."""
     suppliers = []
     used_names = set()
@@ -141,8 +149,8 @@ def assign_risk_profiles(suppliers):
             "on_time_trend": 0.0,         # change per month
         }
 
-    # Story 1: concentration risk. A few single-source suppliers carry an
-    # outsized share of spend by ordering large, expensive, frequent POs.
+    # Story 1: sole-source concentration. A few single-source suppliers carry
+    # an outsized share of spend by ordering large, expensive, frequent POs.
     for sid in ["SUP-003", "SUP-011", "SUP-025"]:
         profiles[sid]["orders_weight"] = 4.5
         profiles[sid]["base_unit_cost"] *= 1.15
@@ -158,18 +166,22 @@ def assign_risk_profiles(suppliers):
         profiles[sid]["defect_trend"] = 950.0
 
     # Story 4: chronic lateness. On-time performance is poor and worsening.
+    # A moderate lead-time CV is added so lateness is a spread of near-misses
+    # rather than a structural certainty, which keeps on-time rates realistic
+    # even at the smaller per-supplier order counts in a 1,200-PO dataset.
     for sid in ["SUP-009", "SUP-031"]:
-        profiles[sid]["base_on_time"] = 0.78
-        profiles[sid]["on_time_trend"] = -0.003
+        profiles[sid]["base_on_time"] = 0.82
+        profiles[sid]["on_time_trend"] = -0.002
+        profiles[sid]["lead_time_cv"] = 0.28
 
     return profiles
 
 
 def set_dual_source_flags(suppliers):
     """
-    Mark a supplier as dual-sourced when its category has more than one
-    active supplier. Categories served by a single supplier are left as
-    single-source so the scorecard can flag concentration.
+    Mark a supplier as dual-sourced when its part family has more than one
+    active supplier. Families served by a single supplier are left as
+    single-source so the scorecard can flag sole-source exposure.
     """
     by_category = {}
     for s in suppliers:
@@ -177,7 +189,7 @@ def set_dual_source_flags(suppliers):
 
     for category, group in by_category.items():
         if len(group) > 1:
-            # Roughly two thirds of suppliers in multi-supplier categories
+            # Roughly two thirds of suppliers in multi-supplier families
             # are covered by a qualified alternate.
             for s in group:
                 s["is_dual_sourced"] = 1 if rng.random() < 0.66 else 0
@@ -185,8 +197,8 @@ def set_dual_source_flags(suppliers):
             for s in group:
                 s["is_dual_sourced"] = 0
 
-    # The engineered concentration-risk suppliers must remain single-source
-    # so the story holds regardless of category coverage.
+    # The engineered sole-source-risk suppliers must remain single-source
+    # so the story holds regardless of family coverage.
     single_source_ids = {"SUP-003", "SUP-011", "SUP-025"}
     for s in suppliers:
         if s["supplier_id"] in single_source_ids:
@@ -198,11 +210,12 @@ def months_between(start, current):
     return (current.year - start.year) * 12 + (current.month - start.month)
 
 
-def build_purchase_orders(suppliers, profiles, target_orders=5000):
-    """Sample individual purchase orders driven by supplier profiles."""
+def build_purchase_orders(suppliers, profiles, target_orders=TARGET_ORDERS):
+    """Sample exactly target_orders purchase orders driven by supplier profiles."""
     orders = []
 
-    # Weight how many orders each supplier gets by its orders_weight.
+    # Weight how many orders each supplier gets by its orders_weight. The
+    # multinomial guarantees the counts sum to exactly target_orders.
     weights = np.array([profiles[s["supplier_id"]]["orders_weight"] for s in suppliers])
     weights = weights / weights.sum()
     counts = rng.multinomial(target_orders, weights)
@@ -223,6 +236,7 @@ def build_purchase_orders(suppliers, profiles, target_orders=5000):
             # buffer over their mean, so they usually land on or before it.
             # Chronically late suppliers (low base_on_time) quote an
             # optimistic promise they routinely miss.
+            #
             # Buffer is bounded so even the least reliable suppliers promise
             # a schedule they miss often but not implausibly (they would be
             # disqualified otherwise). The band keeps on-time rates realistic.
@@ -250,13 +264,13 @@ def build_purchase_orders(suppliers, profiles, target_orders=5000):
             # Quantity scales loosely with unit cost band (cheap parts ship
             # in bulk, expensive assemblies ship in small lots).
             if p["base_unit_cost"] < 10:
-                quantity = int(rng.integers(500, 8000))
+                quantity = int(rng.integers(400, 5000))
             elif p["base_unit_cost"] < 200:
-                quantity = int(rng.integers(50, 1200))
+                quantity = int(rng.integers(40, 900))
             elif p["base_unit_cost"] < 2000:
-                quantity = int(rng.integers(5, 150))
+                quantity = int(rng.integers(4, 90))
             else:
-                quantity = int(rng.integers(1, 25))
+                quantity = int(rng.integers(1, 18))
 
             # Unit cost jitters around the supplier base cost.
             unit_cost = round(float(p["base_unit_cost"]) * float(rng.uniform(0.94, 1.08)), 2)
@@ -298,10 +312,12 @@ def write_csv(path, rows, fieldnames):
 
 
 def main():
-    suppliers = build_suppliers(n_suppliers=40)
+    suppliers = build_suppliers(n_suppliers=N_SUPPLIERS)
     profiles = assign_risk_profiles(suppliers)
     set_dual_source_flags(suppliers)
-    orders = build_purchase_orders(suppliers, profiles, target_orders=5000)
+    orders = build_purchase_orders(suppliers, profiles, target_orders=TARGET_ORDERS)
+
+    assert len(orders) == TARGET_ORDERS, f"expected {TARGET_ORDERS} orders, got {len(orders)}"
 
     suppliers_path = os.path.join(DATA_DIR, "suppliers.csv")
     orders_path = os.path.join(DATA_DIR, "purchase_orders.csv")

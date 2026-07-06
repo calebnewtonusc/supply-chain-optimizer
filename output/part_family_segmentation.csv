@@ -1,0 +1,8 @@
+part_family,supplier_count,family_spend,pct_of_total_spend,sole_source_spend,sole_source_share_pct,avg_on_time_pct,avg_defect_ppm,family_risk_score,risk_tier,top_risk_driver,recommended_action
+Composites,4,7579274.31,18.1,5348903.94,70.6,67.2,1595.0,46.2,High,Late-order risk,Reduce expedite exposure by re-timing releases on late suppliers
+Propulsion Components,9,14178334.13,33.8,10058572.46,70.9,71.7,1570.0,28.5,Medium,Spend concentration,Consolidate volume and renegotiate on the leading supplier
+Electronics,7,7823529.63,18.6,4091349.06,52.3,66.2,1852.0,28.4,Medium,On-time delivery,Put chronic-late suppliers on a delivery improvement plan
+Machined Parts,3,3242982.78,7.7,1809463.75,55.8,74.3,2887.0,21.2,Low,On-time delivery,Put chronic-late suppliers on a delivery improvement plan
+Avionics,7,6069162.75,14.5,0.0,0.0,81.0,679.0,10.3,Low,Spend concentration,Consolidate volume and renegotiate on the leading supplier
+Fasteners,5,769495.45,1.8,0.0,0.0,67.8,1189.0,9.9,Low,On-time delivery,Put chronic-late suppliers on a delivery improvement plan
+Raw Metals,5,2326004.47,5.5,0.0,0.0,75.2,736.0,9.5,Low,On-time delivery,Put chronic-late suppliers on a delivery improvement plan
